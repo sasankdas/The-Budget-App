@@ -1,0 +1,2 @@
+# The-Budget-App
+The budget application will provide the total budget for a particular month for an individual. It consists of all the incomes we get, the expenses we do, all in separate columns and calculate the NET total  income. The application work flow will be by adding the event handlers, getting the input values, adding the items in our data structures, adding it to the UI, calculate the budget and update the UI. 
