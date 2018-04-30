@@ -25,7 +25,13 @@ return {
             addItem : function(type, des, val){
                 var newItem, ID;
                 //create new ID
-                ID= data.allItems[type][data.allItems[type].length - 1].id +1;
+
+                if(data.allItems[type].length>0){
+                    ID= data.allItems[type][data.allItems[type].length - 1].id +1;
+                }else{
+                    ID= 0;
+                }
+                
 
                 //create item based on inc or exp;
                         if(type=== "exp"){
