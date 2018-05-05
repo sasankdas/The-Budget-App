@@ -16,9 +16,17 @@ var data = {
             inc: [],
             },
     totals: {
-            exp: 0,
+            exp: 0, 
             inc: 0,
     }
+}
+
+var calculateTotal = function(type){
+    var sum=0;
+    data.allItems[type].forEach(function(cur){
+         sum+=cur.value;
+    })
+    data.totals[type]  = sum;
 }
 
 return {
@@ -45,6 +53,19 @@ return {
                 // returning new element
                         return newItem;
                     
+                    },
+
+                    calculateBudget: function(){
+         //calculate total income and expenditure
+
+
+
+         
+         //calculate budget
+
+
+
+         //calculate percentage of income that spent
                     }
             }
 
