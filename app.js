@@ -69,11 +69,26 @@ return {
        data.budget = data.totals.inc- data.totals.exp;
 
          //calculate percentage of income that spent
-       data.percentage = Math.round((data.totals.exp/data.totals.inc)*100);
+
+         if(data.totals.inc>0){
+            data.percentage = Math.round((data.totals.exp/data.totals.inc)*100);
+         }else{
+             data.percentage = -1;
+         }
+     
 
 
 
-                    }
+                    },
+
+                    getBudget: function(){
+                       return{
+                           budget:data.budget,
+                           totalInc: data.totals.inc,
+                           totalExp: data.totals.exp,
+                           percentage: data.percentage,
+                       } 
+                    },
             }
 
 
@@ -159,10 +174,14 @@ var setupEventListeners = function (){
 
 var updateBudget= function (){
     //calculate budget
-
+budgetCtrl.calculateBudget();
     //return budget
 
+    var budget= budgetCtrl.getBudget();
+
     //display budget on ui
+
+    console.log(budget);
 }
 
 
